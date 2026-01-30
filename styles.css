@@ -1,44 +1,68 @@
- /* Estilo del contenedor */
- .contenedor-principal {
+ body {
+     display: flex;
      flex-direction: column;
-     /* Pone el botón debajo del tablero */
      align-items: center;
-     /* Centra horizontalmente todo lo que hay dentro */
-     width: 100%;
-     /* Ocupa todo el ancho para poder centrar */
-     margin-top: 20px;
+     font-family: sans-serif;
+     background-color: #f0f0f0;
+     margin-top: 50px;
  }
 
+ /* Contenedor de la cuadrícula */
  #tablero {
      display: grid;
-     /* Creamos 10 columnas de igual tamaño (40px cada una) */
+     /* 10 columnas de 40px */
      grid-template-columns: repeat(10, 40px);
-     /* Creamos 10 filas de igual tamaño */
+     /* 10 filas de 40px */
      grid-template-rows: repeat(10, 40px);
      gap: 1px;
-     /* Espacio entre celdas para que parezca una rejilla */
      background-color: #ccc;
-     /* Color de fondo que se verá en el gap */
-     width: fit-content;
+     border: 2px solid #333;
  }
 
- /* Estilo de cada celda */
+ /* Estilo de las celdas */
  .celda {
      width: 40px;
      height: 40px;
      background-color: white;
      cursor: pointer;
+     transition: background-color 0.2s;
  }
 
- /* Clase para cuando la célula esté "viva" */
+ .celda:hover {
+     background-color: #e0e0e0;
+ }
+
+ /* Estado vivo */
  .viva {
      background-color: #2c3e50;
  }
 
+ /* Controles */
+ .controles {
+     margin-top: 20px;
+     display: flex;
+     gap: 10px;
+ }
+
  button {
+     padding: 10px 20px;
+     font-size: 16px;
+     cursor: pointer;
+     border: none;
+     border-radius: 4px;
+     color: white;
+     font-weight: bold;
+ }
+
+ #btn-run {
      background-color: #3db01b;
-     margin-top: 3%;
-     width: 10%;
-     height: 10vh;
-     display: block;  /* El botón ahora ocupa toda su línea */
+ }
+
+ #btn-reset {
+     background-color: #e74c3c;
+ }
+
+ p {
+     color: #666;
+     font-size: 14px;
  }
